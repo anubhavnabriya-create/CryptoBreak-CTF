@@ -87,9 +87,6 @@ Add one row per solved challenge. The table starts empty on purpose, so only rea
 - Never commit credentials, VPN files, private keys, or personal data.
 - OSINT: use only information relevant to the challenge. Do not collect or publish real people's private information.
 
-## 📄 License
-
-Add a license of your choice (for example MIT) via GitHub's "Add file → Create new file → LICENSE" option.
 
 ---
 
