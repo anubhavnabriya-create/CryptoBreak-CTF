@@ -1,0 +1,82 @@
+# Challenge Title
+
+| Field | Details |
+|-------|---------|
+| **Category** | Linux / Web / Crypto / Forensics / Stego / OSINT |
+| **Difficulty** | Easy / Medium / Hard |
+| **Points** | _(if shown)_ |
+| **Event** | Cyber Induction CTF |
+| **Date solved** | YYYY-MM-DD |
+| **Status** | ✅ Solved / 🔄 In progress |
+
+---
+
+## 1. Challenge Description
+
+> Paste or paraphrase the challenge text exactly as given.
+
+**Files / links provided:** _(file names, hostnames, or "none")_
+
+## 2. Goal
+
+_One or two sentences: what are you trying to find or achieve?_
+
+## 3. Tools Used
+
+- `tool-name` — why you used it
+
+## 4. Step-by-Step Solution
+
+### Step 1: _(short title)_
+
+**What I did and why:**
+_Explain in plain language._
+
+**Command:**
+```bash
+command --options input
+```
+
+**What the command does:**
+- `command`: what the program does
+- `--options`: what each option changes
+
+**Output / observation:**
+```
+Paste the real output here (redact the flag if required).
+```
+
+**Screenshot:**
+![Step 1 screenshot](images/step1.png)
+
+### Step 2: _(short title)_
+
+_Repeat the same structure for each step._
+
+## 5. Flag
+
+```
+FLAG_FORMAT{paste_real_flag_here_or_REDACTED}
+```
+
+> Only record a flag you actually obtained. If the event rules forbid public flags, write `REDACTED`.
+
+## 6. Key Learnings
+
+- What new concept or tool did you learn?
+- What mistake or dead end taught you something?
+- How could this vulnerability or technique be prevented or detected in real life?
+
+## 7. References
+
+- [Link title](https://example.com)
+
+---
+
+### Pre-publish checklist
+
+- [ ] Steps are in order and reproducible
+- [ ] Every command is explained
+- [ ] Screenshots contain no credentials, personal data or IP details I shouldn't share
+- [ ] Flag is real, or marked REDACTED per event rules
+- [ ] Added to the index in the main README
