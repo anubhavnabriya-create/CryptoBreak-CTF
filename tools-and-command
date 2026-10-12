@@ -1,0 +1,146 @@
+# 🧰 Tools & Commands Cheat Sheet
+
+Beginner-friendly commands with explanations. **Only run these on your own machine, files provided by the CTF, or targets the CTF explicitly authorises.**
+
+> Tip: run `man <command>` or `<command> --help` to read the official manual for any tool.
+
+---
+
+## 1. Linux Basics
+
+| Command | What it does |
+|---------|--------------|
+| `pwd` | Prints the folder you are currently in. |
+| `ls -la` | Lists files with details (`-l`) including hidden files that start with a dot (`-a`). |
+| `cd <folder>` | Moves into a folder. `cd ..` goes up one level. |
+| `cat file.txt` | Prints a file's contents to the screen. |
+| `less file.txt` | Opens a long file one page at a time (press `q` to quit). |
+| `head -n 10 file` / `tail -n 10 file` | Shows the first / last 10 lines of a file. |
+| `file mystery` | Identifies a file's real type from its contents, not its extension. |
+| `strings file` | Extracts readable text from a binary file. |
+| `grep "word" file` | Shows lines containing "word". Add `-i` to ignore case, `-r` to search folders. |
+| `find / -name "flag*" 2>/dev/null` | Searches the system for files named `flag*`. `2>/dev/null` hides "permission denied" noise. |
+| `chmod +x script.sh` | Makes a file executable. |
+| `whoami` / `id` | Shows your username and group memberships. |
+| `sudo -l` | Lists commands you are allowed to run with `sudo` (only on CTF machines you are authorised to use). |
+| `ssh user@host -p 22` | Connects to a remote machine over SSH using the given user, host, and port. |
+| `scp user@host:/path/file .` | Copies a file from a remote machine to your current folder. |
+
+**Useful combinations**
+
+```bash
+# Count how many lines contain "error"
+grep -i "error" logfile.txt | wc -l
+```
+- `|` (pipe) sends the output of the first command into the second.
+- `wc -l` counts lines.
+
+---
+
+## 2. Web Exploitation
+
+| Tool / Command | What it does |
+|----------------|--------------|
+| Browser DevTools (`F12`) | Inspect HTML, JavaScript, cookies, storage, and network requests. |
+| `curl -i http://target/` | Fetches a page and shows response headers (`-i`). |
+| `curl -X POST -d "user=a&pass=b" URL` | Sends a POST request with form data. |
+| `curl -H "Header: value" URL` | Sends a custom HTTP header. |
+| `curl -b "name=value" URL` | Sends a cookie with the request. |
+| Burp Suite (Community) | Proxy that lets you view and modify requests between browser and server. |
+| `gobuster dir -u URL -w wordlist.txt` | Guesses hidden directories from a wordlist. **Only on authorised targets**, and respect any rate limits. |
+
+Common first checks: view page source, `/robots.txt`, cookies, comments in HTML/JS, and URL parameters.
+
+---
+
+## 3. Cryptography & Encoding
+
+| Command | What it does |
+|---------|--------------|
+| `echo "text" \| base64` | Encodes text to Base64. |
+| `echo "dGV4dAo=" \| base64 -d` | Decodes Base64. |
+| `echo "68656c6c6f" \| xxd -r -p` | Converts hex back into text. |
+| `echo "text" \| xxd` | Shows a hex dump of data. |
+| `echo "Uryyb" \| tr 'A-Za-z' 'N-ZA-Mn-za-m'` | ROT13 decode/encode (swaps each letter 13 places). |
+| `md5sum file` / `sha256sum file` | Calculates a file's hash (fingerprint). |
+| `openssl enc -d -aes-256-cbc -in file -out out` | Decrypts a file with OpenSSL (asks for the password). |
+| CyberChef (web tool) | Drag-and-drop recipes for decoding, decrypting, and converting data. |
+| `hashid <hash>` | Suggests which hash type a string might be. |
+
+> Hash cracking tools (`john`, `hashcat`) should only be used on hashes the CTF provides, with wordlists you are allowed to use.
+
+---
+
+## 4. Forensics
+
+| Command | What it does |
+|---------|--------------|
+| `file evidence.bin` | Identifies the file type. |
+| `exiftool image.jpg` | Shows metadata (author, camera, GPS, comments, software). |
+| `strings -n 8 evidence.bin` | Prints text sequences of at least 8 characters. |
+| `xxd evidence.bin \| head` | Shows the first bytes in hex. Useful for checking file headers ("magic bytes"). |
+| `binwalk evidence.bin` | Scans a file for embedded files and data. |
+| `binwalk -e evidence.bin` | Scans **and extracts** embedded files. |
+| `foremost -i evidence.bin` | Carves out files by header and footer signatures. |
+| Wireshark | Graphical packet analyser for `.pcap` files. Try filters like `http` or `ip.addr == x.x.x.x`. |
+| `tshark -r capture.pcap -Y http` | Command-line Wireshark; `-r` reads a file, `-Y` applies a display filter. |
+
+---
+
+## 5. Steganography
+
+| Command | What it does |
+|---------|--------------|
+| `exiftool image.jpg` | Checks metadata fields for hidden text. |
+| `strings image.jpg \| tail` | Looks for text appended to the end of an image. |
+| `binwalk -e image.png` | Extracts files hidden inside the image. |
+| `steghide info image.jpg` | Reports whether data may be embedded (asks for a passphrase). |
+| `steghide extract -sf image.jpg` | Extracts hidden data using a passphrase (`-sf` = stego file). |
+| `zsteg image.png` | Checks PNG/BMP files for LSB-hidden data. |
+| Stegsolve / online image viewers | Flip through colour planes and filters to reveal hidden patterns. |
+| Audacity / Sonic Visualiser | View an audio file's spectrogram for hidden images or text. |
+
+---
+
+## 6. OSINT
+
+| Tool / Command | What it does |
+|----------------|--------------|
+| `whois example.com` | Shows public domain registration info. |
+| `dig example.com ANY` | Queries DNS records for a domain. |
+| `nslookup example.com` | Simple DNS lookup. |
+| Google operators (`site:`, `filetype:`, `intitle:`, `"exact phrase"`) | Narrow search results. |
+| Wayback Machine (`web.archive.org`) | Views older saved versions of web pages. |
+| `exiftool photo.jpg` | Reads location/time metadata from a photo. |
+| Reverse image search | Finds where an image appears online. |
+| Google Maps / Street View | Verifies locations visible in a photo. |
+
+**OSINT ethics:** stay on the information the challenge points to. Do not dig into private individuals beyond what the challenge requires, and do not publish personal data.
+
+---
+
+## 7. Handy Python Snippets
+
+```python
+# Decode Base64
+import base64
+print(base64.b64decode("SGVsbG8=").decode())
+
+# XOR bytes with a single-byte key
+data = bytes.fromhex("1a2b3c")
+key = 0x41
+print(bytes(b ^ key for b in data))
+```
+
+- `base64.b64decode` converts Base64 text to bytes; `.decode()` turns bytes into a string.
+- The XOR line flips each byte against the key, a common CTF obfuscation.
+
+---
+
+## Install Tools on Kali/Ubuntu
+
+```bash
+sudo apt update
+sudo apt install -y binwalk exiftool steghide foremost wireshark curl
+```
+- `apt update` refreshes the package list; `apt install -y` installs packages without prompting.
