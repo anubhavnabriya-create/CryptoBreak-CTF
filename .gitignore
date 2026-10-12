@@ -1,0 +1,68 @@
+# ---------- Secrets & credentials (NEVER commit these) ----------
+.env
+.env.*
+*.pem
+*.key
+*.ppk
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+*.ovpn
+*.kdbx
+credentials*
+secrets*
+token*.txt
+*.token
+api_keys*
+
+# ---------- Large / raw challenge files (link to them instead) ----------
+*.pcap
+*.pcapng
+*.raw
+*.mem
+*.vmem
+*.dd
+*.E01
+*.iso
+*.img
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+challenge-files/
+downloads/
+samples/
+
+# ---------- Cracking wordlists & output ----------
+rockyou*.txt
+*.pot
+*.hccapx
+john.pot
+
+# ---------- Compiled files & logs ----------
+*.o
+*.exe
+*.elf
+*.out
+*.bin
+*.log
+
+# ---------- Python / Node / tool caches ----------
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/
+.ipynb_checkpoints/
+
+# ---------- OS & editor files ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*~
