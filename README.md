@@ -93,13 +93,4 @@ Add a license of your choice (for example MIT) via GitHub's "Add file → Create
 
 ---
 
-*Maintained by: `<Anubhav nabriya>` · Cyber Induction CTF · Learning in public* 🚀
-
-
-
-
-
-
-
-
-
+*Maintained by: `<your name>` · Cyber Induction CTF · Learning in public* 🚀
