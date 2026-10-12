@@ -1,0 +1,52 @@
+# 📚 Cybersecurity Learning Resources
+
+Beginner-friendly places to learn and practise legally.
+
+## 🏁 Practice Platforms (legal & beginner-friendly)
+
+| Resource | Best for |
+|----------|----------|
+| [picoCTF](https://picoctf.org/) | Beginner CTF challenges across all categories, with a learning-oriented design |
+| [OverTheWire](https://overthewire.org/wargames/) | Linux command-line skills (start with *Bandit*) |
+| [TryHackMe](https://tryhackme.com/) | Guided rooms and learning paths |
+| [Hack The Box](https://www.hackthebox.com/) | Intermediate to advanced labs |
+| [CTFlearn](https://ctflearn.com/) | Community-made beginner challenges |
+| [CryptoHack](https://cryptohack.org/) | Learning cryptography through puzzles |
+| [PortSwigger Web Security Academy](https://portswigger.net/web-security) | Free, in-depth web security training |
+
+## 📖 Guides & References
+
+- [CTF 101](https://ctf101.org/) — introduction to CTF concepts and categories
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/) — the most common web application risks
+- [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/) — practical defensive guidance
+- [Linux Journey](https://linuxjourney.com/) — learn Linux from scratch
+- [Explain Shell](https://explainshell.com/) — paste a command to get each part explained
+- [Wireshark User Guide](https://www.wireshark.org/docs/) — packet analysis
+
+## 🛠️ Online Tools
+
+- [CyberChef](https://gchq.github.io/CyberChef/) — encoding, decoding, crypto, and data transformation
+- [dCode](https://www.dcode.fr/en) — cipher identifier and solvers
+- [Aperi'Solve](https://www.aperisolve.com/) — online image steganography analysis
+- [Wayback Machine](https://web.archive.org/) — archived web pages
+- [Exiftool documentation](https://exiftool.org/) — metadata reference
+
+## 🕵️ OSINT Learning
+
+- [OSINT Framework](https://osintframework.com/) — directory of OSINT tools by category
+- [Bellingcat's guides](https://www.bellingcat.com/resources/) — responsible open-source investigation methods
+
+## 🎓 Courses & Certifications (to explore later)
+
+- Google Cybersecurity Certificate
+- CompTIA Security+
+- eJPT (INE) — entry-level practical pentesting
+- SANS Cyber Aces (free introductory material)
+
+## ⚖️ Ethics & Law
+
+- Only test systems you own or have **written permission** to test.
+- Read each CTF's rules before starting and before publishing writeups.
+- Learn about responsible disclosure: [CERT/CC guidance](https://www.kb.cert.org/vuls/guidelines/).
+
+> Link availability can change. Check each site directly if a link has moved.
